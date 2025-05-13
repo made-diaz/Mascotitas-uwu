@@ -10,6 +10,7 @@ import com.example.demo.model.Persona;
 import com.example.demo.service.PersonaService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
@@ -20,7 +21,7 @@ public class PersonaController {
     private PersonaService personaService;
 
     @PostMapping
-    public String almacenar(Persona persona){
+    public String almacenar(@RequestBody Persona persona){
         return personaService.almacenar(persona);
     }
 
